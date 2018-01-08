@@ -71,7 +71,37 @@ coeff_df = pd.DataFrame(lm.coef_,X.columns,columns=['Coefficient'])
 coeff_df
 
 
-# In[143]:
+# In[144]:
 
 Datab2.describe()
+
+
+# In[145]:
+
+y2 = Datab2['SPY']
+
+
+# In[146]:
+
+X2 = Datab2['XLI']
+
+
+# In[148]:
+
+import statsmodels.formula.api as smf
+
+
+# In[150]:
+
+lm2 = smf.ols(formula='y2 ~ X2', data=Datab2).fit()
+
+
+# In[151]:
+
+lm2.summary()
+
+
+# In[ ]:
+
+
 
